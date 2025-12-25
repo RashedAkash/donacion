@@ -8,7 +8,10 @@
     * @package donacion
    */
 
-    $header_side_logo = get_theme_mod( 'header_side_logo', get_template_directory_uri() . '/assets/img/logo/logo-black.png' );
+    $header_side_logo = get_theme_mod( 'header_side_logo', get_template_directory_uri() . '/assets/img/logo/logo.png' );
+
+
+    $offcanvas_gallery = get_theme_mod('offcanvas_gallery');
 
     // Contacts Text 
     $header_side_contacts_text = get_theme_mod( 'header_side_contacts_text', __( 'CONTACT US', 'donacion' ) );
@@ -36,71 +39,151 @@
 
 ?>
 <!-- offcanvas area start -->
-<div class="offcanvas__area d-none">
-    <div class="offcanvas__wrapper">
-        <div class="offcanvas__close">
-            <button class="offcanvas__close-btn offcanvas-close-btn">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
+ <!-- slide-bar start -->
+
+        <!-- Sidebar for Mobile -->
+        <div class="fix d-lg-none">
+            <div class="side-info">
+
+                <div class="offset-widget offset-logo mb-30 pb-20">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                             <a class="mobile_logo" href="<?php print esc_url( home_url( '/' ) );?>">
+                        <img src="<?php echo esc_url( $header_side_logo ); ?>" alt="<?php print esc_attr__( 'logo', 'donacion' );?>">
+                    </a>
+                            
+                        </div>
+                        <div class="col-4 text-end"><button class="side-info-close"><i class="fal fa-times"></i></button></div>
+                    </div>
+                    
+                </div>
+
+                <div class="offset-widget offset_searchbar mb-30">
+                    <form method="get" action="#">
+                        <div class="offset_search_content">
+                            <input type="search" placeholder="What are you searching for?">
+                            <button type="submit" class="offset_search_button"><i class="fal fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="mobile-menu"></div>
+
+                <div class="contact-infos mt-30 mb-30">
+                    <div class="contact-list mobile_contact mb-30">
+                        <h4>Contact Info</h4>
+                        <a href="#" class="theme-1"><i class="fal fa-map-marker-alt"></i><span>12/A, Mirnada City Tower, NYC</span></a>
+                        <a href="tel:088889797697" class="theme-2"><i class="fal fa-phone"></i><span>088889797697</span></a>
+                        <a href="mailto:admin@domain.com" class="theme-3"><i class="far fa-envelope"></i><span>admin@domain.com</span></a>  
+
+                    </div>
+
+                    <div class="top_social offset_social mt-20 mb-30">
+                        <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="offcanvas__content">
-            <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
-                <div class="offcanvas__logo logo">
-                    <a href="<?php print esc_url( home_url( '/' ) );?>">
+
+
+        <!-- Sidebar for Laptop -->
+        <div class="fix d-none d-lg-block">
+            
+            <div class="offset-sidebar side-info">
+
+                <div class="offset-widget offset-logo mb-30 pb-20">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <a  href="<?php print esc_url( home_url( '/' ) );?>">
                         <img src="<?php echo esc_url( $header_side_logo ); ?>" alt="<?php print esc_attr__( 'logo', 'donacion' );?>">
                     </a>
                 </div>
+                        <div class="col-4 text-end"><button class="side-info-close"><i class="fal fa-times"></i></button></div>
+                    </div>
+                    
+                </div>
+
+                <div class="offset-widget offset_searchbar mb-30">
+                    <form method="get" action="#">
+                        <div class="offset_search_content">
+                            <input type="search" placeholder="What are you searching for?">
+                            <button type="submit" class="offset_search_button"><i class="fal fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="offset-widget mb-40">
+                    <div class="info-widget">
+                        <h4 class="offset-title mb-20 d-none"><?php echo esc_html__("About Us"); ?></h4>
+                        <p class="mb-30"><?php echo esc_html( $offcanvas_about_us ); ?></p>
+                        
+                    </div>
+                </div>
+
+
+                <?php if(!empty($offcanvas_gallery)): ?>
+                    <div class="row side-row">
+                    <?php foreach($offcanvas_gallery as $item): ?>
+                        <div class="col-4 mb-15">   
+                    <a class="popup-image" href="<?php echo esc_url($item['offcanvas_image']); ?>"><img src="<?php echo esc_url($item['offcanvas_image']); ?>" alt="<?php echo bloginfo(); ?>"></a>
+                    </div>
+                    <?php endforeach; ?>
+                    </div>
+                    <?php endif; ?>
+
+
+               
+
+                <div class="side-map mt-20 mb-30">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29176.030811137334!2d90.3883827!3d23.924917699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1605272373598!5m2!1sen!2sbd"></iframe>
+                </div>
+
+
+                
+                <div class="contact-infos mt-30 mb-30">
+                    <div class="contact-list mb-30">
+                        <h4><?php echo esc_html( $header_side_contacts_text ); ?></h4>
+
+                        <?php  if ( !empty( $header_top_address_text ) ): ?>
+                         <a class='theme-1'
+                            href="<?php echo esc_url( $header_top_address_link ); ?>">
+                            <i class="fal fa-map-marker-alt"></i>
+                            <span>
+                             <?php echo esc_html( $header_top_address_text ); ?>
+                             </span>
+                        </a>
+                        <?php endif?>
+
+                     <?php  if ( !empty(  $header_top_phone ) ): ?>
+                        <a href="tel:<?php echo esc_attr( $header_top_phone ); ?>" class="theme-2"><i class="fal fa-phone"></i><span><?php echo esc_html( $header_top_phone ); ?></span></a>
+                        <?php endif; ?>
+       
+
+                  <?php  if ( !empty( $header_top_email ) ): ?>
+                        <a href="mailto:<?php echo esc_attr( $header_top_email ); ?>" class="theme-3"><i class="far fa-envelope"></i><span><?php echo esc_html( $header_top_email ); ?></span></a> 
+                        <?php endif; ?> 
+
+                    </div>
+
+                    <div class="top_social offset_social mt-20 mb-30">
+                        <?php donacion_header_social_profiles(); ?>
+                    </div>
+
+
+                </div>
+
+                
             </div>
 
-        <div class="tp-main-menu-mobile fix d-xl-none mb-40"></div>
-            <?php  if ( !empty( $header_side_info_switch ) ): ?>
-            <div class="offcanvas__contact">
-                <?php  if ( !empty( $header_side_contacts_text ) ): ?>
-                <h4 class="offcanvas__title"><?php echo esc_html( $header_side_contacts_text ); ?></h4>
-                <?php endif; ?>
-                <?php  if ( !empty( $header_top_address_text ) ): ?>
-                <div class="offcanvas__contact-content d-flex">
-                    <div class="offcanvas__contact-content-icon">
-                        <i class="fa-sharp fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="offcanvas__contact-content-content">
-                        <a
-                            href="<?php echo esc_url( $header_top_address_link ); ?>"><?php echo esc_html( $header_top_address_text ); ?></a>
-                    </div>
-                </div>
-                <?php endif?>
-                <?php  if ( !empty( $header_top_email ) ): ?>
-                <div class="offcanvas__contact-content d-flex">
-                    <div class="offcanvas__contact-content-icon">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <div class="offcanvas__contact-content-content">
-                        <a href="mailto:<?php echo esc_attr( $header_top_email ); ?>"><?php echo esc_html( $header_top_email ); ?></a>
-                    </div>
-                </div>
-                <?php endif; ?>
-                <?php  if ( !empty(  $header_top_phone ) ): ?>
-                <div class="offcanvas__contact-content d-flex">
-                    <div class="offcanvas__contact-content-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div class="offcanvas__contact-content-content">
-                        <a href="tel:<?php echo esc_attr( $header_top_phone ); ?>"><?php echo esc_html( $header_top_phone ); ?></a>
-                    </div>
-                </div>
-                <?php endif; ?>
-            </div>
-            <div class="offcanvas__social">
-                <?php donacion_header_social_profiles(); ?>
-            </div>
-            <?php endif; ?>
         </div>
-    </div>
-</div>
-<div class="body-overlay"></div>
+
+
+
+        <div class="offcanvas-overlay"></div>
+        <!-- slide-bar end -->
+
 <!-- offcanvas area end -->

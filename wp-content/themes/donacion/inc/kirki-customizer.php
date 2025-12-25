@@ -256,7 +256,24 @@ function header_side_section()
             'label' => esc_html__('Header Side Logo', 'donacion'),
             'description' => esc_html__('Header Side Default/Primary Logo Here', 'donacion'),
             'section' => 'header_side_section',
-            'default' => get_template_directory_uri() . '/assets/img/logo/logo.png.png',
+            'default' => get_template_directory_uri() . '/assets/img/logo/logo.png',
+        ]
+    );
+
+     new \Kirki\Field\Repeater(
+        [
+            'settings' => 'offcanvas_gallery',
+            'label'    => esc_html__( 'Offcanvas Gallery Item', 'kindaid' ),
+            'section'  => 'header_side_section',
+            'priority' => 10,
+            'fields'   => [
+                'offcanvas_image'   => [
+                    'type'        => 'image',
+                    'label'       => esc_html__( 'Offcanvas Image', 'kindaid' ),
+                    'description' => esc_html__( 'Offcanvas Image here', 'kindaid' ),
+                    'default'     => '',
+                ],
+            ],
         ]
     );
 
