@@ -89,7 +89,27 @@ function donacion_breadcrumb_func() {
         ?>
 
 <!-- about breadcrumb area start -->
-<section class="breadcrumb__area pt-165 pb-150 p-relative z-index-1 fix"
+
+<section class="breadcrumb_area breadcrumb_overlay" data-background="<?php print esc_attr($bg_main_img);?>">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb_section">
+                             <?php if(function_exists('bcn_display')) : ?>
+                            <ul class="breadcrumb-list volunteer_breadcrumb">
+                                <?php bcn_display(); ?>
+                            </ul>
+                             <?php endif; ?>
+                            <div class="breadcrumb_title">
+                                <h2><?php echo donacion_kses( $title ); ?></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="breadcrumb__area pt-165 d-none pb-150 p-relative z-index-1 fix"
     data-bg-color="<?php echo esc_attr( $breadcrumb_bg_color ); ?>">
     <div class="breadcrumb__bg" data-background="<?php print esc_attr($bg_main_img);?>"></div>
     <div class="container">

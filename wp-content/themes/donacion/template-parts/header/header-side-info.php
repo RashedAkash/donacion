@@ -59,30 +59,51 @@
                 </div>
 
                 <div class="offset-widget offset_searchbar mb-30">
-                    <form method="get" action="#">
-                        <div class="offset_search_content">
-                            <input type="search" placeholder="What are you searching for?">
-                            <button type="submit" class="offset_search_button"><i class="fal fa-search"></i></button>
-                        </div>
-                    </form>
-                </div>
+                <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <div class="offset_search_content">
+                        <input 
+                            type="search"
+                            name="s"
+                            value="<?php echo get_search_query(); ?>"
+                            placeholder="What are you searching for?"
+                        >
+                        <button type="submit" class="offset_search_button">
+                            <i class="fal fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
 
                 <div class="mobile-menu"></div>
 
                 <div class="contact-infos mt-30 mb-30">
                     <div class="contact-list mobile_contact mb-30">
-                        <h4>Contact Info</h4>
-                        <a href="#" class="theme-1"><i class="fal fa-map-marker-alt"></i><span>12/A, Mirnada City Tower, NYC</span></a>
-                        <a href="tel:088889797697" class="theme-2"><i class="fal fa-phone"></i><span>088889797697</span></a>
-                        <a href="mailto:admin@domain.com" class="theme-3"><i class="far fa-envelope"></i><span>admin@domain.com</span></a>  
+                        <h4><?php echo esc_html( $header_side_contacts_text ); ?></h4>
+                        
+                        <?php  if ( !empty( $header_top_address_text ) ): ?>
+                         <a class='theme-1'
+                            href="<?php echo esc_url( $header_top_address_link ); ?>">
+                            <i class="fal fa-map-marker-alt"></i>
+                            <span>
+                             <?php echo esc_html( $header_top_address_text ); ?>
+                             </span>
+                        </a>
+                        <?php endif?>
+
+                     <?php  if ( !empty(  $header_top_phone ) ): ?>
+                        <a href="tel:<?php echo esc_attr( $header_top_phone ); ?>" class="theme-2"><i class="fal fa-phone"></i><span><?php echo esc_html( $header_top_phone ); ?></span></a>
+                        <?php endif; ?>
+       
+
+                  <?php  if ( !empty( $header_top_email ) ): ?>
+                        <a href="mailto:<?php echo esc_attr( $header_top_email ); ?>" class="theme-3"><i class="far fa-envelope"></i><span><?php echo esc_html( $header_top_email ); ?></span></a> 
+                        <?php endif; ?> 
 
                     </div>
 
                     <div class="top_social offset_social mt-20 mb-30">
-                        <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                     <?php donacion_header_social_profiles(); ?>
                     </div>
                 </div>
 
@@ -108,17 +129,25 @@
                 </div>
 
                 <div class="offset-widget offset_searchbar mb-30">
-                    <form method="get" action="#">
+                    <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                         <div class="offset_search_content">
-                            <input type="search" placeholder="What are you searching for?">
-                            <button type="submit" class="offset_search_button"><i class="fal fa-search"></i></button>
+                            <input 
+                                type="search"
+                                name="s"
+                                value="<?php echo get_search_query(); ?>"
+                                placeholder="What are you searching for?"
+                            >
+                            <button type="submit" class="offset_search_button">
+                                <i class="fal fa-search"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
 
+
                 <div class="offset-widget mb-40">
                     <div class="info-widget">
-                        <h4 class="offset-title mb-20 d-none"><?php echo esc_html__("About Us"); ?></h4>
+                        <h4 class="offset-title mb-20 d-none"><?php echo esc_html__("About Us","donacion"); ?></h4>
                         <p class="mb-30"><?php echo esc_html( $offcanvas_about_us ); ?></p>
                         
                     </div>
