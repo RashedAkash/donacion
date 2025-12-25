@@ -256,7 +256,7 @@ function header_side_section()
             'label' => esc_html__('Header Side Logo', 'donacion'),
             'description' => esc_html__('Header Side Default/Primary Logo Here', 'donacion'),
             'section' => 'header_side_section',
-            'default' => get_template_directory_uri() . '/assets/img/logo/logo-black.png',
+            'default' => get_template_directory_uri() . '/assets/img/logo/logo.png.png',
         ]
     );
 

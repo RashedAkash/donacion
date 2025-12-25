@@ -36,7 +36,7 @@
 
 ?>
 <!-- offcanvas area start -->
-<div class="offcanvas__area">
+<div class="offcanvas__area d-none">
     <div class="offcanvas__wrapper">
         <div class="offcanvas__close">
             <button class="offcanvas__close-btn offcanvas-close-btn">

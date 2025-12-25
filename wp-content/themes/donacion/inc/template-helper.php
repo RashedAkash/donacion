@@ -135,7 +135,7 @@ add_action( 'donacion_language', 'donacion_language_list' );
 function donacion_header_logo() { ?>
     <?php 
         $donacion_logo_on = function_exists('tpmeta_field')? tpmeta_field('donacion_en_secondary_logo') : '';
-        $donacion_logo = get_template_directory_uri() . '/assets/img/logo/logo-black.png';
+        $donacion_logo = get_template_directory_uri() . '/assets/img/logo/logo.png';
         $donacion_logo_white = get_template_directory_uri() . '/assets/img/logo/logo.png';
 
         $donacion_site_logo = get_theme_mod( 'header_logo', $donacion_logo );
@@ -294,8 +294,8 @@ function donacion_header_menu() {
             'theme_location' => 'main-menu',
             'menu_class'     => '',
             'container'      => '',
-            'fallback_cb'    => 'donacion_Navwalker_Class::fallback',
-            'walker'         => new \TPCore\Widgets\donacion_Navwalker_Class,
+             'fallback_cb'   => 'Donacion_Walker_Nav_Menu::fallback',
+            'walker'        => new Donacion_Walker_Nav_Menu,
         ] );
     ?>
 <?php

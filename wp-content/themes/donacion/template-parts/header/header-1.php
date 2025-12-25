@@ -93,48 +93,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-6">
+                   
                     <div class="logo">
-                        <a href="index.html"><img src="assets/img/logo/logo.png" alt="" /></a>
+                        <?php donacion_header_logo(); ?>
                     </div>
                 </div>
                 <div class="col-xxl-7 col-xl-7 col-lg-9 d-none d-lg-block">
                     <div class="main-menu menu_2 text-center">
                         <nav id="mobile-menu">
-                            <ul>
-                                <li class="menu-item-has-children"><a href="index.html">Home</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>
-                                <li class="menu-item-has-children"><a href="cause.html">Causes</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="cause.html">Causes</a>
-                                        <li><a href="cause-details.html">Cause Details</a>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children"><a href="#">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="event.html">Events</a>
-                                        <li><a href="event-details.html">Events Details</a>
-                                        <li><a href="volunteer.html">Volunteer</a>
-                                        <li><a href="volunteer-details.html">Volunteer Details</a>
-                                        <li><a href="donation.html">Donation</a>
-                                        <li><a href="mission.html">Mission</a>
-                                        <li><a href="faq.html">Faq</a>
-                                    </ul>
-                                </li>
-                                <li class="active menu-item-has-children"><a href="blog.html">News</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">News</a></li>
-                                        <li><a href="blog-details.html">News Details</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
+                            <?php donacion_header_menu(); ?>
                         </nav>
                     </div>
                 </div>

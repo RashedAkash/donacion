@@ -123,7 +123,7 @@ add_action( 'donacion_before_main_content', 'donacion_breadcrumb_func' );
 function donacion_search_form() {
     ?>
          <!-- search area start -->
-         <div class="search-area">
+         <div class="search-area d-none">
          <div class="search-inner p-relative">
             <div class="container">
                <div class="row justify-content-center">
