@@ -39,8 +39,8 @@
 
    // header right
    $donacion_header_right = get_theme_mod( 'header_right_switch', false );
-   $donacion_menu_col = $donacion_header_right ? 'col-xl-7 col-lg-8 d-none d-lg-block' : 'col-xl-10 col-lg-8 d-none d-lg-block';
-   $donacion_menu_end = $donacion_header_right ? '' : 'd-flex justify-content-end';
+   $donacion_menu_col = $donacion_header_right ? 'col-xxl-7 col-xl-7 col-lg-9 d-none d-lg-block' : 'col-xl-10 col-lg-8 d-none d-lg-block';
+   $donacion_menu_end = $donacion_header_right ? 'text-center' : 'text-end';
 
 //    col-xl-7 d-none d-xl-block
 
@@ -98,23 +98,32 @@
                         <?php donacion_header_logo(); ?>
                     </div>
                 </div>
-                <div class="col-xxl-7 col-xl-7 col-lg-9 d-none d-lg-block">
-                    <div class="main-menu menu_2 text-center">
+                <div class="<?php echo esc_attr($donacion_menu_col); ?>">
+                    <div class="main-menu menu_2 <?php echo esc_attr($donacion_menu_end); ?>">
                         <nav id="mobile-menu">
                             <?php donacion_header_menu(); ?>
                         </nav>
                     </div>
                 </div>
+
+                 <?php  if ( !empty( $donacion_header_right ) ): ?>
                 <div class="col-xxl-3 col-xl-3 col-lg-1 col-md-6 col-6">
                     <div class="header-right d-flex align-items-center justify-content-end">
-                        <div class="header-sing d-inline-block d-none d-xl-block">
-                            <a class="g_btn hbtn_1 to_right1 rad-30" href="donation.html">Make Donation<span></span></a>
-                        </div>
+
+                      <?php  if ( !empty( $header_top_button_switch ) and !empty( $header_top_button_text ) ): ?>
+                                    <div class="header-sing d-inline-block d-none d-xl-block">
+                                        <a class="g_btn hbtn_1 to_right1 rad-30"
+                                            href="<?php echo esc_url( $header_top_button_link ); ?>"><?php echo esc_html( $header_top_button_text ); ?><span></span></a>
+                                    </div>
+                                    <?php endif; ?>
+                        
                         <div class="hamburger-menu menu-bar info-bar d-inline-block ml-20">
                             <button class="hamburger-btn open-mobile-menu"><i class="fal fa-bars"></i></button>
                         </div>
                     </div>
                 </div>
+                <?php endif; ?> 
+                
             </div>
         </div>
     </div>
