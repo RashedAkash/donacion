@@ -180,25 +180,25 @@ function donacion_header_social_profiles() {
     $donacion_topbar_linkedin_url = get_theme_mod( 'header_linkedin_link', __( '#', 'donacion' ) );
     $donacion_topbar_youtube_url = get_theme_mod( 'header_youtube_link', __( '#', 'donacion' ) );
     ?>
+
+    
 <?php if ( !empty( $donacion_topbar_fb_url ) ): ?>
-<a class="icon facebook" href="<?php print esc_url( $donacion_topbar_fb_url );?>"><i class="fa-brands fa-facebook-f"></i></a>
+<a class="facebook" href="<?php print esc_url( $donacion_topbar_fb_url );?>"><i class="fab fa-facebook-f"></i></a>
 <?php endif;?>
 
 <?php if ( !empty( $donacion_topbar_twitter_url ) ): ?>
-<a class="icon twitter" href="<?php print esc_url( $donacion_topbar_twitter_url );?>"><i class="fa-brands fa-twitter"></i></a>
+<a class="twitter" href="<?php print esc_url( $donacion_topbar_twitter_url );?>"><i class="fab fa-twitter"></i></a>
 <?php endif;?>
 
 <?php if ( !empty( $donacion_topbar_instagram_url ) ): ?>
-<a class="icon youtube" href="<?php print esc_url( $donacion_topbar_instagram_url );?>"><i class="fa-brands fa-instagram"></i></a>
+<a class="pinterest" href="<?php print esc_url( $donacion_topbar_instagram_url );?>"><i class="fab fa-pinterest-p"></i></a>
 <?php endif;?>
 
 <?php if ( !empty( $donacion_topbar_linkedin_url ) ): ?>
 <a class="icon linkedin" href="<?php print esc_url( $donacion_topbar_linkedin_url );?>"><i class="fab fa-linkedin"></i></a>
 <?php endif;?>
 
-<?php if ( !empty( $donacion_topbar_youtube_url ) ): ?>
-<a class="icon youtube" href="<?php print esc_url( $donacion_topbar_youtube_url );?>"><i class="fab fa-youtube"></i></a>
-<?php endif;?>
+
 
 <?php
 }

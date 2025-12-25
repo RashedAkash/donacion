@@ -200,6 +200,16 @@ function header_top_section()
         ]
     );
 
+    new \Kirki\Field\URL(
+        [
+            'settings' => 'header_mail_link',
+            'label' => esc_html__('Mail URL', 'donacion'),
+            'section' => 'header_top_section',
+            'default' => 'donacion@support.com',
+            'priority' => 10,
+        ]
+    );
+
     new \Kirki\Field\Text(
         [
             'settings' => 'header_top_time',

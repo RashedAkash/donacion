@@ -13,6 +13,7 @@
 
    // Email id 
    $header_top_email = get_theme_mod( 'header_email', __( 'donacion@support.com', 'donacion' ) );
+   $header_top_email = get_theme_mod( 'header_mail_link', __( 'donacion@support.com', 'donacion' ) );
 
    // Phone Number
    $header_top_phone = get_theme_mod( 'header_phone', __( '+8801310-069824', 'donacion' ) );
@@ -55,27 +56,39 @@
 <!-- header area start -->
 
 <header class="header-area">
+
+<?php  if ( !empty( $header_topbar_switch ) ): ?>
     <div class="header_top_area d-none d-lg-block">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xxl-9 col-xl-9 col-lg-8">
                     <div class="top_mailing">
-                        <a href="#" class="theme-1"><i class="fal fa-envelope"></i>admin@domain.com</a>
-                        <a href="#" class="theme-2"><i class="fal fa-phone"></i>088889797697</a>
-                        <a href="#" class="theme-3"><i class="fal fa-map-marker-alt"></i>street 222, South Africa</a>
+
+                    <?php  if ( !empty( $header_top_email ) ): ?>
+                        <a href="mailto:<?php echo donacion_kses($header_top_email_link); ?>" class="theme-1"><i class="fal fa-envelope"></i><?php echo esc_html( $header_top_email  ); ?></a>
+                    <?php endif; ?>
+
+                         <?php  if ( !empty( $header_top_phone ) ): ?>
+                        <a href="tel:<?php echo donacion_kses($phone_number_url); ?>" class="theme-2"><i class="fal fa-phone"></i><?php echo esc_html( $header_top_phone ); ?></a>
+                        <?php endif; ?>
+
+                    <?php  if ( !empty( $header_top_address_text ) ): ?>
+                        <a href="<?php echo donacion_kses($header_top_address_link); ?>" class="theme-3"><i class="fal fa-map-marker-alt"></i><?php echo esc_html($header_top_address_text); ?></a>
+                    <?php endif; ?>
+                        
                     </div>
                 </div>
                 <div class="col-xxl-3 col-xl-3 col-lg-4 text-start text-md-end">
                     <div class="top_social">
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                      <?php  donacion_header_social_profiles(); ?>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+ <?php endif; ?>
+
     <div id="sticky-header" class="header_menu_area header_menu_area_2">
         <div class="container">
             <div class="row align-items-center">
