@@ -854,6 +854,55 @@ function footer_layout_section()
 
     new \Kirki\Field\Text(
         [
+            'settings' => 'footer_help_title',
+            'label' => esc_html__('Footer Help Title', 'donacion'),
+            'section' => 'footer_layout_section',
+            'default' => esc_html__('Help & Support Now', 'donacion'),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_help_des',
+            'label' => esc_html__('Footer Help Des', 'donacion'),
+            'section' => 'footer_layout_section',
+            'default' => esc_html__('Might as well say Would you Could be you be mine?', 'donacion'),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_help_btn_text',
+            'label' => esc_html__('Footer Btn Text', 'donacion'),
+            'section' => 'footer_layout_section',
+            'default' => esc_html__('Donate', 'donacion'),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_help_btn_link',
+            'label' => esc_html__('Footer Btn Link', 'donacion'),
+            'section' => 'footer_layout_section',
+            'default' => esc_html__('#', 'donacion'),
+            'priority' => 10,
+        ]
+    );
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'footer_help_des',
+            'label' => esc_html__('Footer Help Des', 'donacion'),
+            'section' => 'footer_layout_section',
+            'default' => esc_html__('Might as well say Would you Could be you be mine?', 'donacion'),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
             'settings' => 'footer_copyright',
             'label' => esc_html__('Footer Copyright', 'donacion'),
             'section' => 'footer_layout_section',

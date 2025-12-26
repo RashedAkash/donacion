@@ -15,6 +15,12 @@
     $footer_bottom_copyright_area_switch = get_theme_mod( 'footer_bottom_copyright_area_switch', true );
 
     $footer_bottom_menu = get_theme_mod( 'footer_bottom_menu', __( '#', 'donacion' ) );
+
+      // help
+    $footer_help_title = get_theme_mod( 'footer_help_title',__("Help & Support Now","donacion") );
+    $footer_help_des = get_theme_mod( 'footer_help_des',__("Might as well say Would you Could be you be mine?","donacion") );
+    $footer_help_btn_text = get_theme_mod( 'footer_help_btn_text',__("Donate","donacion") );
+    $footer_help_btn_link = get_theme_mod( 'footer_help_btn_link',__("#","donacion") );
  
     // theme
     $footer_bg_img = get_theme_mod( 'footer_bg_image' );
@@ -67,7 +73,119 @@
 ?>
 
 <!-- footer area start -->
-<footer class="tp-footer-area z-index-1 p-relative" style="<?php echo esc_attr($main_bg); ?>">
+
+        <footer>
+    <div class="footer_top_2 footer-bg <?php echo esc_attr( $main_bg ); ?>">
+
+        <?php if (
+            is_active_sidebar( 'footer-2-1' ) ||
+            is_active_sidebar( 'footer-2-2' ) ||
+            is_active_sidebar( 'footer-2-3' ) ||
+            is_active_sidebar( 'footer-2-4' )
+        ) : ?>
+
+        <div class="footer_top_wrapper pt-90 pb-70">
+            <div class="container">
+                <div class="row">
+
+                <?php
+                $footer_columns = $footer_columns ?? 4;
+
+                if ( $footer_columns < 5 ) :
+                ?>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <?php dynamic_sidebar( 'footer-2-1' ); ?>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-4 col-md-6">
+                        <?php dynamic_sidebar( 'footer-2-2' ); ?>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <?php dynamic_sidebar( 'footer-2-3' ); ?>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <?php dynamic_sidebar( 'footer-2-4' ); ?>
+                    </div>
+
+                <?php else :
+                    for ( $num = 1; $num <= $footer_columns; $num++ ) :
+                        if ( ! is_active_sidebar( 'footer-2-' . $num ) ) {
+                            continue;
+                        }
+                ?>
+                    <div class="<?php echo esc_attr( $footer_class[ $num ] ); ?>">
+                        <?php dynamic_sidebar( 'footer-2-' . $num ); ?>
+                    </div>
+                <?php
+                    endfor;
+                endif;
+                ?>
+
+                </div>
+
+                <!-- CTA ROW -->
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-sm-12">
+                        <div class="fcta_sigle has_bg mb-30">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/footer/fcta2_1.png' ); ?>" alt="">
+                            <div class="fcta_text">
+                                <h4>Help & Support Now</h4>
+                                <span>Might as well say Would you Could be you be mine?</span>
+                            </div>
+                            <div class="fcta_button">
+                                <a href="#" class="g_btn fca_btn1 to_right2 p-40 rad-50">
+                                    Donate <span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-sm-12">
+                        <div class="fcta_sigle has_bg pad_170s mb-30">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/footer/fcta2_2.png' ); ?>" alt="">
+                            <div class="fcta_text">
+                                <?php if ( ! empty( $footer_help_title ) ) : ?>
+                                    <h4><?php echo donacion_kses( $footer_help_title ); ?></h4>
+                                <?php endif; ?>
+
+                                <?php if ( ! empty( $footer_help_des ) ) : ?>
+                                    <span><?php echo donacion_kses( $footer_help_des ); ?></span>
+                                <?php endif; ?>
+                            </div>
+
+                            <?php if ( ! empty( $footer_help_btn_link ) ) : ?>
+                                <div class="fcta_button">
+                                    <a href="<?php echo esc_url( $footer_help_btn_link ); ?>" class="g_btn fca_btn to_left p-40 rad-50">
+                                        <?php echo donacion_kses( $footer_help_btn_text ); ?>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="footer_copyright_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p><?php echo donacion_copyright_text(); ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<footer class="tp-footer-area d-none z-index-1 p-relative" style="<?php echo esc_attr($main_bg); ?>">
     <div class="tp-footer-bg-shape">
         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer/bg-shape.png" alt="">
     </div>

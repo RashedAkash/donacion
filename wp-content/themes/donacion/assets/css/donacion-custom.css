@@ -1,30 +1,51 @@
-.etn-widget.etn-add-calender-url{
-    margin-top: 25px;
+.etn-widget.etn-add-calender-url {
+  margin-top: 25px;
 }
 
-.tp-event-details__text p{
-    font-family: 'Manrope', sans-serif;
-    
+.tp-event-details__text p {
+  font-family: "Manrope", sans-serif;
 }
-.tp-hero-wrapper-slider .swiper-slide{
-    background: #16243E;
+.tp-hero-wrapper-slider .swiper-slide {
+  background: #16243e;
 }
-
 
 /* //breadcrumb_section */
-.breadcrumb_section .breadcrumb-list  span {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    list-style: none;
+.breadcrumb_section .breadcrumb-list span {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  list-style: none;
 }
 
 .breadcrumb_section .breadcrumb-list span.post.post-page.current-item {
-    color: #ffae00;
+  color: #ffae00;
 }
 
 .breadcrumb_section .breadcrumb-list span.post.post-page.current-item::before {
-    content: "|";
-    margin: 0 16px;
-    color: white;
+  content: "|";
+  margin: 0 16px;
+  color: white;
+}
+
+/* footer */
+.footer-bg {
+  background-color: #111c2d;
+}
+.pt-90 {
+  padding-top: 90px;
+}
+.pb-70 {
+  padding-bottom: 70px;
+}
+
+.menu-footer-menu-container .menu li a{
+  text-decoration: none;
+    font-size: 16px;
+    color: #a2aec1;
+}
+.menu-footer-menu-container .menu li:hover > a{
+  color: white;
+}
+.menu-footer-menu-container .menu li {
+ margin-bottom: 20px;
 }

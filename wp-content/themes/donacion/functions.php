@@ -195,6 +195,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * include donacion functions file
  */
 require_once Donacion_THEME_INC . 'class-navwalker.php';
+require_once Donacion_THEME_INC . 'footer-logo-widget.php';
 require_once Donacion_THEME_INC . 'class-tgm-plugin-activation.php';
 require_once Donacion_THEME_INC . 'add_plugin.php';
 require_once Donacion_THEME_INC . '/common/donacion-breadcrumb.php';

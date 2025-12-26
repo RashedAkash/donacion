@@ -45,10 +45,10 @@ function donacion_widgets_init() {
             'name'          => sprintf( esc_html__( 'Footer %1$s', 'donacion' ), $num ),
             'id'            => 'footer-' . $num,
             'description'   => sprintf( esc_html__( 'Footer Column %1$s', 'donacion' ), $num ),
-            'before_widget' => '<div id="%1$s" class="tp-footer-widget tp-footer-2-col-'.$num.' mb-50 %2$s"> <div class="tp-footer-widget-content">',
-            'after_widget'  => '</div></div>',
-            'before_title'  => '<h3 class="tp-footer-widget-title">',
-            'after_title'   => '</h3>',
+            'before_widget' => '<div id="%1$s" class="footer_widget footer_news mb-50 tp-footer-col-'.$num.' mb-50 %2$s"> ',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="footer_widget_title mb-25"><h3 class="footer_title footer_title_2">',
+            'after_title'   => '</h3> </div>',
         ] );
     }
 
@@ -60,10 +60,10 @@ function donacion_widgets_init() {
                 'name'          => sprintf( esc_html__( 'Footer Style 2 : %1$s', 'donacion' ), $num ),
                 'id'            => 'footer-2-' . $num,
                 'description'   => sprintf( esc_html__( 'Footer Style 2 : %1$s', 'donacion' ), $num ),
-                'before_widget' => '<div id="%1$s" class="tp-footer-widget tp-footer-col-'.$num.' mb-50 %2$s"> <div class="tp-footer-widget-content">',
-                'after_widget'  => '</div></div>',
-                'before_title'  => '<h3 class="tp-footer-widget-title">',
-                'after_title'   => '</h3>',
+                'before_widget' => '<div id="%1$s" class="footer_widget footer_news mb-50 tp-footer-col-'.$num.' mb-50 %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<div class="footer_widget_title mb-25"><h3 class="footer_title footer_title_2">',
+                'after_title'   => '</h3> </div>',
             ] );
         }
     }    
