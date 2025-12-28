@@ -166,3 +166,33 @@
 	transition: all 0.3s linear 0s;
 	color: var(--clr-theme-1);
 }
+/* navigation */
+.single_post_nav.right_nav h4 a {
+	text-align: end;
+}
+/* comments */
+.avatar.avatar-70.photo {
+	border-radius: 100%;
+}
+.comment_avater .comment-reply-link {
+	font-size: 14px;
+	padding: 10px 22px;
+	line-height: 1;
+	display: inline-block;
+	border: 2px solid #f3f3f3;
+	border-radius: 30px;
+	text-decoration: none;
+	
+}
+.comment-reply-link i {
+	
+    color: var(--clr-theme-2);
+    padding-right: 5px;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+
+	
+}
