@@ -56,7 +56,7 @@ if ( is_single() ):
 
 <?php else: ?>
 
-     <div id="post-<?php the_ID();?>" <?php post_class( 'blog_image_wrapper mb-40 format-standard' );?> >
+     <div id="post-<?php the_ID();?>" <?php post_class( 'blog_video_wrapper mb-40 format-video' );?> >
         <?php if ( has_post_thumbnail() ): ?>
         <div class="blog_image">
             <a href="<?php the_permalink();?>" class="w_img"> <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?></a>

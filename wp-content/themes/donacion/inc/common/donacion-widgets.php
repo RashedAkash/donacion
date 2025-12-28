@@ -16,10 +16,10 @@ function donacion_widgets_init() {
     register_sidebar( [
         'name'          => esc_html__( 'Blog Sidebar', 'donacion' ),
         'id'            => 'blog-sidebar',
-        'before_widget' => '<div id="%1$s" class="tp-sidebar-widget mb-40 %2$s"><div class="tp-sidebar-widget-content">',
+        'before_widget' => '<div id="%1$s" class="blog_sidebar_wrapper pl-15 mb-40 %2$s"><div class="sidebar_widget has_border about_widget mb-40">',
         'after_widget'  => '</div></div>',
-        'before_title'  => '<h3 class="tp-sidebar-widget-title">',
-        'after_title'   => '</h3>',
+        'before_title'  => '<div class="sidebar_title"><h3 class="sidebar_title_text has_border">',
+        'after_title'   => '</h3></div>',
     ] );
 
     /**
