@@ -49,3 +49,47 @@
 .menu-footer-menu-container .menu li {
  margin-bottom: 20px;
 }
+
+/* pagination */
+
+.page_pagination {
+    margin-top: 10px;
+}
+
+.page_pagination ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.page_pagination ul li {
+    display: inline-block;
+    margin: 0 5px 10px;
+}
+
+/* Link & Current */
+.page_pagination ul li a,
+.page_pagination ul li span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    color: #222;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.page_pagination ul li a:hover {
+    background-color: var(--clr-theme-1);
+    color: #fff;
+}
+
+/* Active Page */
+.page_pagination .page-numbers.current {
+    background-color: var(--clr-theme-1);
+    color: #fff;
+}

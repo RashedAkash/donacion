@@ -8,9 +8,10 @@
  */
 ?>
 
-<article id="post-<?php the_ID();?>"
-    <?php post_class( 'postbox__blockquote p-relative postbox_quote__item format-quote mb-50' );?>>
-    <div class="post__text">
-        <?php the_content();?>
+ <div id="post-<?php the_ID();?>" <?php post_class( 'blog_blockquote_wrapper bg_cover mb-40' );?>  data-background="assets/img/news/blog_quote.jpg">
+    <div class="blog_blockquote_content">
+        <i class="fas fa-quote-left"></i>
+        <h4 class="blog_title"><?php the_content();?></h4>
     </div>
-</article>
+</div>
+

@@ -55,31 +55,48 @@ if ( is_single() ):
 </article>
 
 <?php else: ?>
-<article id="post-<?php the_ID();?>" <?php post_class( 'tp-postbox-item mb-50 format-video' );?>>
-    <?php if ( has_post_thumbnail() ): ?>
-    <div class="tp-postbox-thumb p-relative">
-        <a href="<?php the_permalink();?>">
-            <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
-        </a>
-        <?php if ( !empty($donacion_video_url) ): ?>
-        <div class="tp-postbox-thumb-btn">
-            <a class="play-btn popup-video" href="<?php echo esc_url($donacion_video_url); ?>"><i
-                    class="fa-solid fa-play"></i></a>
+
+     <div id="post-<?php the_ID();?>" <?php post_class( 'blog_image_wrapper mb-40 format-standard' );?> >
+        <?php if ( has_post_thumbnail() ): ?>
+        <div class="blog_image">
+            <a href="<?php the_permalink();?>" class="w_img"> <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?></a>
+
+            <?php if ( !empty($donacion_video_url) ): ?>
+            <a href="<?php echo esc_url($donacion_video_url); ?>" class="video_play has_abs"><i class="fal fa-play"></i></a>
+            <?php endif; ?>
+
+            <div class="admin_meta has_abs">
+                <?php if ( !empty($donacion_blog_cat) ): ?>
+                    <?php if ( !empty( $categories[0]->name ) ): ?>
+                 <a class="blog_cat" href="<?php print esc_url(get_category_link($categories[0]->term_id)); ?>"> 
+                            <?php echo esc_html($categories[0]->name); ?>
+                        </a> 
+               
+                    <?php endif;?>
+                    <?php endif;?>
+
+                    
+               <?php if ( !empty($donacion_blog_author) ): ?>
+                <div class="blog_admin">
+                    <a href="<?php print esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 60, '', '', array(
+                            'class' => 'author-img'
+                        ) ); ?> </a>
+                    <a href="volunteer-details.html" class="admin_by">By <?php print get_the_author();?></a>
+                </div>
+                 <?php endif;?>
+            </div>
         </div>
-        <?php endif; ?>
-    </div>
-    <?php endif; ?>
-    <div class="tp-postbox-content">
-        <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
-        <h3 class="tp-postbox-title">
-            <a href="<?php the_permalink();?>"><?php the_title();?></a>
-        </h3>
-        <div class="tp-postbox-text">
-            <?php the_excerpt();?>
+         <?php endif; ?>
+
+        <div class="blog_content">
+            <h4 class="blog_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+            <p><?php the_excerpt();?></p>
+
+            <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
+            
         </div>
-        <!-- blog btn -->
-        <?php get_template_part( 'template-parts/blog/blog-btn' ); ?>
     </div>
-</article>
+
+
 <?php
 endif;?>
